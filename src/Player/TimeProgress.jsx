@@ -1,6 +1,4 @@
-
-
-export const TimeProgress = ({playlist}) => {
+export const TimeProgress = ({ playlist }) => {
   return (
     <div className='time-progress'>
       <div id='progress-container'>
@@ -47,4 +45,4 @@ export const TimeProgress = ({playlist}) => {
       </span>
     </div>
   );
-}
+};

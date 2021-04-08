@@ -1,10 +1,9 @@
-import { initialData } from './initialData';
 import { Song } from './Song';
 
-export const Playlist = () => {
+export const Playlist = ({ songs }) => {
   return (
-    <div className='white-player-playlist'>
-      {initialData.songs.map(song => {
+    <div className='playlist'>
+      {songs.map(song => {
         return (
           <Song
             key={song.name}

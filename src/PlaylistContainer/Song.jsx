@@ -4,7 +4,7 @@ export const Song = props => {
   return (
     <>
       <div
-        className='white-player-playlist-song amplitude-song-container amplitude-play-pause'
+        className='playlist-song amplitude-song-container amplitude-play-pause'
         data-amplitude-song-index='0'
         data-amplitude-playlist='trip_hop'
       >
