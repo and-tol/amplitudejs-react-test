@@ -1,20 +1,18 @@
-import { useContext, useState } from 'react';
+import { useContext, useState } from 'react'
+import { PlayerContext } from '../context/PlayerContext'
+import { ReactComponent as ClosePlaylist } from '../img/close.svg'
+import { Playlist } from './Playlist'
+import styles from './PlaylistContainer.module.scss'
+import { PlaylistControls } from './PlaylistControls'
 
-import { ReactComponent as ClosePlaylist } from '../img/close.svg';
-import { Playlist } from './Playlist';
-import { PlaylistControls } from './PlaylistControls';
-
-import { PlayerContext } from '../context/PlayerContext';
-
-import styles from './PlaylistContainer.module.scss';
 
 export const PlaylistContainer = () => {
   const { playlists, playlist, showPlaylist, handleHidePlaylist } = useContext(
     PlayerContext
   );
 
-  const [playlistName, setPlaylistName] = useState(
-    playlists[playlist].playlistName || null
+  const [playlistTitle, setplaylistTitle] = useState(
+    playlists[playlist].playlistTitle || null
   );
 
   const [songs, setSongs] = useState(playlists[playlist].songs || null);
@@ -42,11 +40,11 @@ export const PlaylistContainer = () => {
         </div>
       </div>
 
-      <div className='up-next'>{playlistName}</div>
+      <div className='up-next'>{playlistTitle}</div>
 
-      <Playlist songs={songs} />
+      <Playlist songs={songs} playlist={playlist} />
 
-      <PlaylistControls />
+      <PlaylistControls playlist={playlist}  />
     </div>
   );
 };

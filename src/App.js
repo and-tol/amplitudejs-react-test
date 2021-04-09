@@ -1,4 +1,3 @@
-import * as Amplitude from 'amplitudejs';
 import { useEffect, useRef, useContext } from 'react';
 
 import { PlayerContext } from './context/PlayerContext';
@@ -9,10 +8,11 @@ import { PlayerControls } from './Player/PlayerControls';
 import { TimeProgress } from './Player/TimeProgress';
 import { PlaylistContainer } from './PlaylistContainer/PlaylistContainer';
 import { ReactComponent as PlaylistShow } from './img/playlist.svg';
-import { SongInfo } from './Player/SongInfo'
+import { SongInfo } from './Player/SongInfo';
+import { SongToAdd } from './SongToAdd/SongToAdd'
 
 function App() {
-  const { initialData, playlist, handleShowPlaylist } = useContext(
+  const {Amplitude, initialData, songsToAdd, playlist, handleShowPlaylist } = useContext(
     PlayerContext
   );
 
@@ -27,7 +27,7 @@ function App() {
       <div ref={refPlayer} className='example-container'>
         <div className='left'>
           <span className='playlist-title'>{'play'}</span>
-          <div id='white-player'>
+          <div id='player'>
             <div className='top'>
               <div>&nbsp;</div>
               <div className='center'>
@@ -49,6 +49,14 @@ function App() {
             <PlaylistContainer />
           </div>
         </div>
+        <div className='right'>{songsToAdd.map((songToAdd, i) => {
+          return (
+            <SongToAdd
+              cover_art_url={songToAdd.cover_art_url}
+              songToAddIndex={i}
+            />
+          );
+        })}</div>
       </div>
     </>
   );

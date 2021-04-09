@@ -1,12 +1,12 @@
 export const Song = props => {
-  const { cover_art_url, name, artist, album } = props;
+  const { cover_art_url, name, artist, album, songIndex, playlist } = props;
 
   return (
     <>
       <div
         className='playlist-song amplitude-song-container amplitude-play-pause'
-        data-amplitude-song-index='0'
-        data-amplitude-playlist='trip_hop'
+        data-amplitude-song-index={songIndex}
+        data-amplitude-playlist={playlist}
       >
         <img src={cover_art_url} alt={name} />
 

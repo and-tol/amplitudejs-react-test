@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
+
 export const PlaylistControls = ({ playlist }) => {
   return (
-    <div className='playlist-controls'>
+    <div className='playlist-controls-container'>
       <img
         alt=''
         data-amplitude-song-info='cover_art_url'
@@ -41,4 +43,8 @@ export const PlaylistControls = ({ playlist }) => {
       </div>
     </div>
   );
+};
+
+PlaylistControls.propTypes = {
+  playlist: PropTypes.string
 };

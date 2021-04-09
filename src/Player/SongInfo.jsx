@@ -1,4 +1,6 @@
-export const SongInfo = ({playlist}) => {
+import PropTypes from 'prop-types';
+
+export const SongInfo = ({ playlist }) => {
   return (
     <>
       <img
@@ -22,4 +24,8 @@ export const SongInfo = ({playlist}) => {
       </div>
     </>
   );
-}
+};
+
+SongInfo.propTypes = {
+  playlist: PropTypes.string,
+};

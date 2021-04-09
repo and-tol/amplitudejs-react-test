@@ -1,5 +1,7 @@
-export const PlayerControls = props => {
-  const playlist = props.playlist || null;
+import PropTypes from 'prop-types'
+
+export const PlayerControls = ({ playlist = null}) => {
+  // const playlist = props.playlist || null;
 
   return (
     <>
@@ -33,3 +35,7 @@ export const PlayerControls = props => {
     </>
   );
 };
+
+PlayerControls.propTypes = {
+  playlist: PropTypes.string
+}

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const TimeProgress = ({ playlist }) => {
   return (
     <div className='time-progress'>
@@ -45,4 +47,8 @@ export const TimeProgress = ({ playlist }) => {
       </span>
     </div>
   );
+};
+
+TimeProgress.propTypes = {
+  playlist: PropTypes.string,
 };
